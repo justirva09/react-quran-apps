@@ -32,7 +32,7 @@ class QuranSection extends Component {
 
   getAllSurah = () => {
     try{
-      fetch('http://api.alquran.cloud/v1/surah')
+      fetch('https://api.alquran.cloud/v1/surah')
       .then((response) => {
         return response.json();
       })

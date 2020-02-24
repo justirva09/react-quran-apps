@@ -34,7 +34,7 @@ class Surah extends Component {
       // const resSurah = await API.GetAllSurah(payload1);
       // const resTerjemahan = await API.GetAllSurah(payload2);
 
-      const resSurah =  await fetch(`http://api.alquran.cloud/v1/surah/${id}`)
+      const resSurah =  await fetch(`https://api.alquran.cloud/v1/surah/${id}`)
       .then((response) => {
         return response.json();
       })
@@ -42,7 +42,7 @@ class Surah extends Component {
         return responseJson
       });
     
-      const resTerjemahan = await fetch(`http://api.alquran.cloud/v1/surah/${id}/id.indonesian`)
+      const resTerjemahan = await fetch(`https://api.alquran.cloud/v1/surah/${id}/id.indonesian`)
       .then((response) => {
         return response.json();
       })
