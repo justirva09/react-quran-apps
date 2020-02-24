@@ -1,0 +1,261 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: url(https://assets.pokemon.com/static2/_ui/img/chrome/container_bg.png);
+}
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,700&display=swap');
+@import url('//cdn.alquran.cloud/public/fonts/uthman_tn09.otf');
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+img {
+  width: 100%;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.section-container {
+  padding: 10px 20px;
+}
+
+/* CARD */
+.m-listSurah {
+  width: 100%;
+  font-family: 'Quicksand', sans-serif;
+  overflow: hidden;
+}
+.m-listSurah--Items:hover {
+  border-bottom: 1px inset rgb(0, 150, 136);
+}
+.m-detailSurah {
+  color: #222;
+  font-size: 14px;
+  line-height: 1.1;
+}
+.m-listSurah--Items {
+  padding: 14px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+  transition: all 0.35s;
+}
+
+.m-listSurah--Items:hover {
+  box-shadow: 1px #ddd;
+}
+
+.m-listSurah--Items:hover {
+  border-bottom: 1px inset rgb(0, 150, 136);
+  transition: all 0.35s;
+  transform: translateX(5px);
+}
+
+.m-listSurah .m-listSurah--Items .m-numberSurah {
+  width: 40px;
+  height: 35px;
+  padding: 4px 0;
+  border-radius: 100%;
+  text-align: center;
+  line-height: 35px;
+  margin: 18px 30px;
+  color: #fff;
+  background: #009688;
+}
+
+.m-detailSurah p:first-child {
+  font-size: 18px;
+  color: #505050;
+  font-weight: 700;
+}
+
+/* List ayah */
+.bismillah {
+  text-align: center;
+  font-size: 35px;
+  color: #009688;
+  line-height: 46px;
+  font-family: Uthmani, serif;
+  flex: 1;
+}
+.p-contentAyah__items span {
+  padding: 11px 15px;
+  border: 1px solid #009688;
+  color: black;
+  border-radius: 11px;
+  font-size: 14px;
+  margin: 11px;
+  cursor: pointer;
+  font-weight: 500;
+}
+.m-listAyah {
+  width: 100%;
+  text-align: right;
+  padding: 10px;
+  font-size: 24px;
+  color: #505050;
+  border-top: 1px solid hsla(0, 0%, 50%, 0.1);
+  line-height: 46px;
+  font-family: Uthmani, serif;
+}
+
+.m-listAyah__number {
+  width: 20px;
+  height: 20px;
+  line-height: 1.9;
+  position: absolute;
+  right: 0;
+  font-size: 12px;
+  text-align: center;
+  margin: 15px;
+  border-radius: 35%;
+  color: #009688;
+  border: 1px solid #009688;
+}
+
+.m-listAyah__ayah {
+  padding: 0 50px;
+  color: #666;
+}
+/*Header*/
+
+#header {
+  background: #fff;
+  max-width: 1020px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 20;
+  box-shadow: 0 4px 2px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 0px 0px 6px 6px;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.o-brandTitle {
+  text-align: center;
+  color: #e74c3c;
+}
+
+/*Detail Page*/
+
+.o-PokeBody {
+  padding: 14px;
+}
+
+/*404*/
+
+.p-backButton {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  color: #071922;
+  background: #fdb813;
+  width: 40%;
+  padding: 10px;
+  border-radius: 6px;
+  transition: all 0.35s;
+}
+.p-backButton:hover {
+  transition: all 0.35s;
+  box-shadow: 6px 6px rgba(0, 0, 0, 0.16);
+}
+
+/*PANEL*/
+
+.panelWrapper {
+  position: fixed;
+  bottom: -50%;
+  left: 20px;
+  right: 0;
+  padding: 24px;
+  background: #009688;
+  color: #fff;
+  width: 100%;
+  border-radius: 6px;
+  max-width: 300px;
+  font-family: Quicksand;
+  transition: all 0.3s ease-out;
+}
+
+.panelWrapper.show {
+  bottom: 50px;
+  transition: all 0.3s ease-out;
+}
+.open-panel {
+  position: fixed;
+  bottom: 50px;
+  left: 20px;
+  background: #009688;
+  padding: 14px 20px;
+  border-radius: 100px;
+  color: #fff;
+}
+.open-panel:hover {
+  cursor: pointer;
+  transition: all 0.1s;
+}
+
+.panelWrapper__col {
+  width: 100%;
+  margin-top: 37px;
+}
+
+.panelWrapper__col span {
+  margin: 0 10px;
+  padding: 5px;
+  background: #4caf50;
+  text-align: center;
+  border-radius: 6px;
+  font-family: Quicksand;
+  flex: 1;
+}
+
+.panelWrapper__items {
+  border-radius: 6px;
+}
+
+.panel_close span {
+  position: absolute;
+  right: 0;
+  padding: 7px 12px;
+  background: #e91e63;
+  border-radius: 100px;
+  transition: all 0.35s;
+}
+
+.panel_close:hover span {
+  transition: all 1s;
+  transform: rotate(360deg);
+  cursor: pointer;
+}
+
+.m-listAyah__translate {
+  transition: all 0.3s ease-out;
+}
+
+.tl-hide {
+  opacity: 0;
+  height: 0px;
+  line-height: 0;
+  margin: -10px;
+  transition: all 0.3s ease-out;
+}
+
+.list-section {
+  padding: 40px 0;
+}
+@media only screen and (max-width: 480px) {
+  .list-section {
+    padding: 70px 0;
+  }
+  .panelWrapper {
+    left: 6px;
+  }
+}
