@@ -1,7 +1,7 @@
 import {React, Component, _, Link} from 'libraries';
 import {  View, Section } from 'components/atoms';
 import { BaseLayout } from 'containers';
-import { IoIosAnalytics } from "react-icons/io";
+import { IoIosAnalytics, IoIosArrowDropleft, IoIosArrowDropright } from "react-icons/io";
 import {  LoadingBar, ListAyah } from 'components';
 
 class Surah extends Component {
@@ -152,9 +152,9 @@ class Surah extends Component {
             </table>
           </View>
           <View className="panelWrapper__col row">
-            <span onClick={this.handlePreviousPages}>Previous</span>
+            <span onClick={this.handlePreviousPages}><IoIosArrowDropleft size="20px" /></span>
             <span onClick={this.handleShowTl}>Terjemahan</span>
-            <span onClick={this.handleNextPages}>NEXT</span>
+            <span onClick={this.handleNextPages}><IoIosArrowDropright size="20px" /></span>
           </View>
         </View>
       </View>

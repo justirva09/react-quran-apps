@@ -12,6 +12,7 @@ class Homepage extends Component {
     return(
       <BaseLayout title="Aika - Apps">
         <Section style={{padding: '40px 0'}}>
+          <View style={{margin:'auto', maxWidth: 900}}>
           <View className="row">
 
             <View className="m-colMenu">
@@ -30,7 +31,6 @@ class Homepage extends Component {
             <View className="m-colMenu">
               <View className="m-colMenu__items">
                 <View className="m-colMenu__thumbnail">
-                Cooming Soon
                 </View>
                 <View className="m-colMenu__body">
                 Cooming Soon
@@ -41,7 +41,6 @@ class Homepage extends Component {
             <View className="m-colMenu">
               <View className="m-colMenu__items">
                 <View className="m-colMenu__thumbnail">
-                Cooming Soon
                 </View>
                 <View className="m-colMenu__body">
                 Cooming Soon
@@ -52,10 +51,9 @@ class Homepage extends Component {
             <View className="m-colMenu">
               <View className="m-colMenu__items">
                 <View className="m-colMenu__thumbnail">
-                  Cooming Soon
                 </View>
                 <View className="m-colMenu__body">
-                  Baca Qur'an
+                Cooming Soon
                 </View>
               </View>
             </View>
@@ -63,7 +61,6 @@ class Homepage extends Component {
             <View className="m-colMenu">
               <View className="m-colMenu__items">
                 <View className="m-colMenu__thumbnail">
-                Cooming Soon
                 </View>
                 <View className="m-colMenu__body">
                   Cooming Soon
@@ -74,7 +71,6 @@ class Homepage extends Component {
             <View className="m-colMenu">
               <View className="m-colMenu__items">
                 <View className="m-colMenu__thumbnail">
-                  Cooming Soon
                 </View>
                 <View className="m-colMenu__body">
                   Cooming Soon
@@ -82,6 +78,7 @@ class Homepage extends Component {
               </View>
             </View>
             
+          </View>
           </View>
         </Section>
       </BaseLayout>

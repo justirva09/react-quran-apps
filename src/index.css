@@ -290,4 +290,7 @@ img {
   .panelWrapper {
     left: 6px;
   }
+  .m-colMenu {
+    width: 100%;
+  }
 }
