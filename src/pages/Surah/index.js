@@ -1,7 +1,7 @@
 import {React, Component, _, Link} from 'libraries';
 import {  View, Section } from 'components/atoms';
 import { BaseLayout } from 'containers';
-import { API } from 'config';
+import { IoIosAnalytics } from "react-icons/io";
 import {  LoadingBar, ListAyah } from 'components';
 
 class Surah extends Component {
@@ -185,7 +185,7 @@ class Surah extends Component {
                 </Section>
               )}
             </View>
-            <View className="open-panel" onClick={this.handleShowPanel}>O</View>
+            <View className="open-panel" onClick={this.handleShowPanel}><IoIosAnalytics size="30px" /></View>
             <this.RenderPanel />
           </View>
         </Section>
