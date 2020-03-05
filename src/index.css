@@ -404,4 +404,11 @@ img {
   .p-backButton {
     width: 100%;
   }
+  .bounce {
+    animation: unset;
+  }
+  .m-searchField {
+    width: 70%;
+    margin: 5rem 50px;
+  }
 }
