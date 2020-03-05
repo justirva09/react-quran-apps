@@ -12,7 +12,7 @@ class Quran extends Component {
 
   render(){
     return(
-      <BaseLayout title="List Surah">
+      <BaseLayout title="List Surah" className="quran-section" linkTo="/">
         <Section style={{padding: '40px 0'}}>
           <QuranSection />
         </Section>

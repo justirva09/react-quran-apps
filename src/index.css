@@ -1,3 +1,72 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,700&display=swap');
+@import url('//cdn.alquran.cloud/public/fonts/uthman_tn09.otf');
+
+@-moz-keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    -moz-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -moz-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+  60% {
+    -moz-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+}
+@-webkit-keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+  60% {
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+}
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -moz-transform: translateY(-30px);
+    -ms-transform: translateY(-30px);
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+  60% {
+    -moz-transform: translateY(-15px);
+    -ms-transform: translateY(-15px);
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+}
+
+.bounce {
+  -webkit-animation: bounce 2s infinite;
+  animation: bounce 2s infinite;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,10 +74,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: url(https://assets.pokemon.com/static2/_ui/img/chrome/container_bg.png);
+  background-color: #e0e5ec;
 }
-@import url('https://fonts.googleapis.com/css?family=Quicksand:400,700&display=swap');
-@import url('//cdn.alquran.cloud/public/fonts/uthman_tn09.otf');
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -17,6 +84,11 @@ code {
 
 img {
   width: 100%;
+}
+.quran-section {
+  background: #fff;
+  box-shadow: 9px 9px 16px rgb(163, 177, 198, 0.6),
+    -9px -9px 16px rgb(163, 177, 198, 0.6);
 }
 .row {
   display: flex;
@@ -73,7 +145,11 @@ img {
   color: #505050;
   font-weight: 700;
 }
-
+.m-colMenu__thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 /* List ayah */
 .bismillah {
   text-align: center;
@@ -126,9 +202,10 @@ img {
 
 #header {
   background: #fff;
-  max-width: 1020px;
   position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   width: 100%;
   z-index: 20;
   box-shadow: 0 4px 2px 0 rgba(0, 0, 0, 0.1);
@@ -155,8 +232,8 @@ img {
   text-decoration: none;
   font-size: 14px;
   font-weight: bold;
-  color: #071922;
-  background: #fdb813;
+  color: #fff;
+  background: rgb(0, 150, 136);
   width: 40%;
   padding: 10px;
   border-radius: 6px;
@@ -278,9 +355,36 @@ img {
 }
 
 .m-colMenu__items {
-  box-shadow: 0px 2px 15px 0.5px rgba(0, 0, 0, 0.1);
+  box-shadow: 9px 9px 16px rgb(163, 177, 198, 0.6),
+    -9px -9px 16px rgba(255, 255, 255, 0.5);
+  background: #fff;
   border-radius: 6px;
   overflow: hidden;
+}
+
+/* Search Field */
+.m-searchField {
+  width: 50%;
+  margin: 5rem auto;
+}
+
+.m-searchField input {
+  width: 100%;
+  border: 2px solid #eee;
+  border-radius: 1rem;
+  padding: 11px;
+  transition: all 0.35s;
+}
+
+.m-searchField input:focus {
+  outline: none;
+  border: 2px solid #ddd;
+  transition: all 0.35s;
+}
+
+.m-searchField input::placeholder {
+  color: #ddd;
+  font-size: 1rem;
 }
 
 @media only screen and (max-width: 480px) {
@@ -291,6 +395,13 @@ img {
     left: 6px;
   }
   .m-colMenu {
+    width: 100%;
+  }
+  .p-section {
+    font-size: 14px;
+    width: 100%;
+  }
+  .p-backButton {
     width: 100%;
   }
 }

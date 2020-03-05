@@ -1,6 +1,5 @@
-import {React, Component, _} from 'libraries';
+import {React, Component, _, Fragment} from 'libraries';
 import { View, Section } from 'components/atoms';
-import { API } from 'config';
 import { ListSurah, LoadingBar } from 'components/molecules';
 
 
@@ -9,7 +8,8 @@ class QuranSection extends Component {
     super(props);
     this.state = {
       alquran: [],
-      isLoading: false
+      isLoading: false,
+      filterSearch: ''
     }
   }
 
@@ -18,16 +18,23 @@ class QuranSection extends Component {
   }
 
 
+  filterController = e => {
+    this.setState({
+      filterSearch: e.target.value
+    })
+  }
 
-  // testGetSurah = () => {
-  //   fetch('http://api.alquran.cloud/v1/surah')
-  // .then((response) => {
-  //   return response.json();
-  // })
-  // .then((myJson) => {
-  //   console.log(myJson);
-  // });
-  // }
+  filterQuery = () => {
+    const { filterSearch, alquran } = this.state;
+    return alquran.filter(
+      queryData => 
+          queryData.name.toLowerCase().indexOf(filterSearch.toLowerCase()) !== -1
+          ||
+          queryData.englishName.toLowerCase().indexOf(filterSearch.toLowerCase()) !== -1 
+          ||
+          queryData.revelationType.toLowerCase().indexOf(filterSearch.toLowerCase()) !== -1
+    )
+  }
 
 
   getAllSurah = () => {
@@ -50,17 +57,23 @@ class QuranSection extends Component {
 
   render() {
     const {alquran} = this.state;
+    const dataQuran = this.filterQuery()
     return(
-      <View className="row">
-        {!_.isEmpty(alquran) && _.isArray(alquran) 
-        ? alquran.map((data, index) => ((
+      <Fragment>
+        <View className="m-searchField">
+          <input type="text" onChange={this.filterController} placeholder="Search Surah"/>
+        </View>
+        <View className="row">
+          {!_.isEmpty(dataQuran) && _.isArray(dataQuran) 
+          ? dataQuran.map((data, index) => ((
             <ListSurah data={data} key={index} />
-          ))) : (
-            <Section style={{padding: '40px 0', margin: 'auto'}}>
-              <LoadingBar />
-            </Section>
-          )}
-      </View>
+            ))) : (
+              <Section style={{padding: '40px 0', margin: 'auto'}}>
+                <LoadingBar />
+              </Section>
+            )}
+        </View>
+      </Fragment>
     )
   }
 }

@@ -1,7 +1,8 @@
-import {React, Component, Link} from 'libraries';
+import {React, Component, _} from 'libraries';
 import { Container, View, Image, Button, Section } from 'components/atoms';
 import { BaseLayout } from 'containers';
-import { IoMdBook } from "react-icons/io";
+import { CardHome, LoadingBar } from 'components';
+import dataHome from 'assets/JSON/contentHome.js';
 
 class Homepage extends Component {
   componentDidMount() {
@@ -14,70 +15,13 @@ class Homepage extends Component {
         <Section style={{padding: '40px 0'}}>
           <View style={{margin:'auto', maxWidth: 900}}>
           <View className="row">
-
-            <View className="m-colMenu">
-              <View className="m-colMenu__items">
-                <View className="m-colMenu__thumbnail">
-                  <IoMdBook size="105px" />
-                </View>
-                <View className="m-colMenu__body">
-                  <Link to="/quran">
-                    Baca Qur'an
-                  </Link>
-                </View>
+            {!_.isEmpty(dataHome) && _.isArray(dataHome) ? dataHome.map((data, index) => (
+              <CardHome data={data} key={index} />
+            )) : (
+              <View style={{margin: 'auto'}}>
+                <LoadingBar />
               </View>
-            </View>
-
-            <View className="m-colMenu">
-              <View className="m-colMenu__items">
-                <View className="m-colMenu__thumbnail">
-                </View>
-                <View className="m-colMenu__body">
-                Cooming Soon
-                </View>
-              </View>
-            </View>
-
-            <View className="m-colMenu">
-              <View className="m-colMenu__items">
-                <View className="m-colMenu__thumbnail">
-                </View>
-                <View className="m-colMenu__body">
-                Cooming Soon
-                </View>
-              </View>
-            </View>
-
-            <View className="m-colMenu">
-              <View className="m-colMenu__items">
-                <View className="m-colMenu__thumbnail">
-                </View>
-                <View className="m-colMenu__body">
-                Cooming Soon
-                </View>
-              </View>
-            </View>
-
-            <View className="m-colMenu">
-              <View className="m-colMenu__items">
-                <View className="m-colMenu__thumbnail">
-                </View>
-                <View className="m-colMenu__body">
-                  Cooming Soon
-                </View>
-              </View>
-            </View>
-
-            <View className="m-colMenu">
-              <View className="m-colMenu__items">
-                <View className="m-colMenu__thumbnail">
-                </View>
-                <View className="m-colMenu__body">
-                  Cooming Soon
-                </View>
-              </View>
-            </View>
-            
+            )}
           </View>
           </View>
         </Section>

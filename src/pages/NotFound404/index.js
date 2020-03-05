@@ -10,28 +10,33 @@ class NotFound404 extends Component {
   }
   render(){
     return(
-      <BaseLayout>
-      <section className="section-container">
+      <BaseLayout showHeader={false} title={`404 Page Not Found`} className="quran-section" linkTo="/quran">
         <main>
-          <Image source="https://assets.pokemon.com/static2/_ui/img/global/psyduck.png" style={{width: '50%',}} /> 
-          <div style={{padding:6}}>
-            <h2>404 Page Not Found!</h2>
+          <div className="p-section">
+            <h1>404 Page Not Found!</h1>
             <p>Sorry! The page you're looking for is not here.</p>
-          </div>    
+            <Link to="/" style={{margin: '20px auto'}} className="p-backButton">Kembali Ke Homepage</Link> 
+          </div>
         </main>
-        <Link to="/" style={{margin: '20px auto'}} className="p-backButton">Kembali Ke Homepage</Link> 
-      </section>
       <style>
         {`
-        .section-container {
-          padding: 40px 20px;
+        .p-section {
+          padding: 0 5rem 5rem 5rem;
+          width: 50%;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
       }
         main {
           display: flex;
           align-items: center;
           align-content: center;
           justify-content: center;
+          font-family: Quicksand
         }
+        html, body, #root {
+          height: 100%;
+      }
         `}
       </style>
       </BaseLayout>

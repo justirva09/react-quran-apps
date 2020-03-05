@@ -165,7 +165,7 @@ class Surah extends Component {
     const { surah, ayat, showTranslate } = this.state;
     const pageTitle = `Surah : ${surah.englishName}`
     return(
-      <BaseLayout showHeader={true} title={`${surah.englishName ? pageTitle : ''}`}>
+      <BaseLayout showHeader={true} title={`${surah.englishName ? pageTitle : ''}`} className="quran-section" linkTo="/quran">
         <Section className="list-section" style={{position: 'relative'}}>
           <View className="content-ayah">
           <View className="p-contentAyah__items row">
@@ -185,7 +185,7 @@ class Surah extends Component {
                 </Section>
               )}
             </View>
-            <View className="open-panel" onClick={this.handleShowPanel}><IoIosAnalytics size="30px" /></View>
+            <View className="open-panel bounce" onClick={this.handleShowPanel}><IoIosAnalytics size="30px" /></View>
             <this.RenderPanel />
           </View>
         </Section>
