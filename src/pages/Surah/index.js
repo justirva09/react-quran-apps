@@ -122,7 +122,6 @@ class Surah extends Component {
 
   RenderPanel = () => {
     const { surah, showPanel } = this.state;
-    console.log(showPanel)
     return(
       <View className={`panelWrapper ${showPanel ? 'show' : ''}`}>
         <View style={{position:'relative'}} className="panel_close" onClick={this.handleShowPanel}>
@@ -164,12 +163,17 @@ class Surah extends Component {
   render(){
     const { surah, ayat, showTranslate } = this.state;
     const pageTitle = `Surah : ${surah.englishName}`
+    const checkAyah = ayat.filter(dataItem => {
+      return dataItem
+    })
+    const bissmillah =  checkAyah[0] ? checkAyah[0].text.replace("بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ", "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ") : null;
+    
     return(
       <BaseLayout showHeader={true} title={`${surah.englishName ? pageTitle : ''}`} className="quran-section" linkTo="/quran">
         <Section className="list-section" style={{position: 'relative'}}>
           <View className="content-ayah">
           <View className="p-contentAyah__items row">
-                {surah.englishName !== "Al-Faatiha" ? <View className="bismillah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</View> : null}
+              {surah.englishName !== "Al-Faatiha" ? <View className="bismillah">{bissmillah}</View> : null}
             </View>
             <View className="row">
               {!_.isEmpty(ayat) && _.isArray(ayat)
