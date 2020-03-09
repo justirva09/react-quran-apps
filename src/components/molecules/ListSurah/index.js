@@ -2,7 +2,7 @@ import {React, PropTypes, Link} from 'libraries';
 import {View, Text} from 'components/atoms';
 
 const ListSurah = ({ data }) => (
-  <Link className="m-listSurah" style={{textDecoration: 'none'}} to={`/quran/surah/${data.number}`}>
+  <Link className="m-listSurah" style={{textDecoration: 'none'}} to={`/surah/${data.number}`}>
   <View className="m-listSurah--Items row">
     <View className="m-numberSurah">
       {data.number}

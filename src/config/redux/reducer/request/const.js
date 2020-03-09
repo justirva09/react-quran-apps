@@ -1,0 +1,7 @@
+const actionType = {
+  REQUEST_API: 'REQUEST_API',
+  REQUEST_API_SUCCESS: 'REQUEST_API_SUCCESS',
+  REQUEST_API_FAILED: 'REQUEST_API_FAILED'
+}
+
+export default actionType;

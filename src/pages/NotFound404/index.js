@@ -1,8 +1,5 @@
 import {React, Component, Link} from 'libraries';
-import { Container, View, Image, Button } from 'components/atoms';
 import { BaseLayout } from 'containers';
-import { PokeCard } from 'components/molecules';
-import { CardSection } from 'components';
 
 class NotFound404 extends Component {
   componentDidMount() {

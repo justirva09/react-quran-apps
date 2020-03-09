@@ -94,7 +94,7 @@ class Surah extends Component {
       return alert('Sudah Mencapai Surah Terakhir');
     }
     const {history} = this.props;
-    history.push(`/quran/surah/${amountId}`);
+    history.push(`/surah/${amountId}`);
     this.setState({
       ayat: [],
       showPanel: false
@@ -111,7 +111,7 @@ class Surah extends Component {
       return alert('Anda Sudah Mencapai Surah Pertama')
     }
     const {history} = this.props;
-    history.push(`/quran/surah/${amountId}`);
+    history.push(`/surah/${amountId}`);
     this.setState({
       ayat: [],
       showPanel: false
@@ -162,14 +162,14 @@ class Surah extends Component {
 
   render(){
     const { surah, ayat, showTranslate } = this.state;
-    const pageTitle = `Surah : ${surah.englishName}`
+    const pageTitle = `${surah.englishName}`
     const checkAyah = ayat.filter(dataItem => {
       return dataItem
     })
     const bissmillah =  checkAyah[0] ? checkAyah[0].text.replace("بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ", "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ") : null;
     
     return(
-      <BaseLayout showHeader={true} title={`${surah.englishName ? pageTitle : ''}`} className="quran-section" linkTo="/quran">
+      <BaseLayout showHeader={true} title={`${surah.englishName ? pageTitle : 'Loading'}`} className="quran-section" linkTo="/">
         <Section className="list-section" style={{position: 'relative'}}>
           <View className="content-ayah">
           <View className="p-contentAyah__items row">

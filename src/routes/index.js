@@ -1,24 +1,18 @@
 
-import {Homepage, Surah, Quran} from 'pages';
+import { Surah, Quran} from 'pages';
 
 const routes = [
-  {
-    title: 'Home',
-    component: Homepage,
-    exact: true,
-    path: '/'
-  },
   {
     title: 'Quran',
     component: Quran,
     exact: true,
-    path: '/quran'
+    path: '/'
   },
   {
     title: 'Surah',
     component: Surah,
     exact: true,
-    path: '/quran/surah/:id'
+    path: '/surah/:id'
   }
 ];
 
