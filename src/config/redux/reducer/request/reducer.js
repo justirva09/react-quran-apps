@@ -2,6 +2,10 @@ import actionType from './const';
 
 const initState = {};
 
+/**
+ * @param { initialState } state
+ * @param { api, type, value } action
+ */
 
 const request = (state = initState, action) => {
   switch(action.type) {
