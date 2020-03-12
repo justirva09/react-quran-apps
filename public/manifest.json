@@ -1,6 +1,6 @@
 {
   "short_name": "Qur'an Indonesia",
-  "name": "Developed Justirva@KabayanCoding.com",
+  "name": "Progressive Web Apps",
   "icons": [
     {
       "src": "alquran-icon.png",
@@ -8,12 +8,12 @@
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
+      "src": "alquran-icon.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "logo512.png",
+      "src": "alquran-icon.png",
       "type": "image/png",
       "sizes": "512x512"
     }
