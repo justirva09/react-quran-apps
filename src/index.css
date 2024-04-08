@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Quicksand:400,700&display=swap');
-@import url('//cdn.alquran.cloud/public/fonts/uthman_tn09.otf');
+@import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap')
 
 @-moz-keyframes bounce {
   0%,
@@ -104,6 +104,8 @@ img {
   font-family: 'Quicksand', sans-serif;
   overflow: hidden;
 }
+
+
 .m-listSurah--Items:hover {
   border-bottom: 1px inset rgb(0, 150, 136);
 }
@@ -177,21 +179,33 @@ img {
   color: #505050;
   border-top: 1px solid hsla(0, 0%, 50%, 0.1);
   line-height: 46px;
-  font-family: Uthmani, serif;
+  font-family: "Amiri Quran", serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
+/* .m-listAyah__items {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+} */
+
 .m-listAyah__number {
-  width: 20px;
-  height: 20px;
-  line-height: 1.9;
-  position: absolute;
-  right: 0;
-  font-size: 12px;
+  width: 30px; /* Adjust as needed */
+  height: 30px; /* Adjust as needed */
+  line-height: 25px; /* Same as height for vertical centering */
+  font-size: 14px;
   text-align: center;
-  margin: 15px;
-  border-radius: 35%;
-  color: #009688;
+  border-radius: 50%; /* Makes the div circular */
+  color: transparent; /* Hide the text */
   border: 1px solid #009688;
+  position: absolute;
+  right: 10px;
+}
+
+.m-listAyah__number span {
+  display: inline-block; /* Ensures vertical centering */
+  color: #009688; /* Color of the number */
 }
 
 .m-listAyah__ayah {
@@ -259,6 +273,7 @@ img {
   max-width: 300px;
   font-family: Quicksand;
   transition: all 0.3s ease-out;
+  font-family: "Open Sans", sans-serif !important;
 }
 
 .panelWrapper.show {
@@ -290,7 +305,7 @@ img {
   background: #4caf50;
   text-align: center;
   border-radius: 6px;
-  font-family: Quicksand;
+  font-family: "Open Sans", sans-serif;
   flex: 1;
 }
 
@@ -301,7 +316,8 @@ img {
 .panel_close span {
   position: absolute;
   right: 0;
-  padding: 7px 12px;
+  padding: 7px 10px;
+  font-size: 14px;
   background: #e91e63;
   border-radius: 100px;
   transition: all 0.35s;
@@ -315,6 +331,7 @@ img {
 
 .m-listAyah__translate {
   transition: all 0.3s ease-out;
+  font-family: "Open Sans", sans-serif !important;
 }
 
 .tl-hide {

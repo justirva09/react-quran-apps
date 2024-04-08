@@ -122,6 +122,7 @@ class Surah extends Component {
 
   RenderPanel = () => {
     const { surah, showPanel } = this.state;
+    console.log(surah)
     return(
       <View className={`panelWrapper ${showPanel ? 'show' : ''}`}>
         <View style={{position:'relative'}} className="panel_close" onClick={this.handleShowPanel}>
@@ -135,7 +136,12 @@ class Surah extends Component {
                 <tr>
                   <td>Nama Surah</td>
                   <td style={{padding: '0 10px'}}>:</td>
-                  <td>{surah.englishName}</td>
+                  <td>{surah.name} - {surah.englishName}</td>
+                </tr>
+                <tr>
+                  <td>Translation Name:</td>
+                  <td style={{padding: '0 10px'}}>:</td>
+                  <td>{surah.englishNameTranslation}</td>
                 </tr>
                 <tr>
                   <td>Jumlah Ayat</td>
@@ -150,10 +156,10 @@ class Surah extends Component {
               </tbody>
             </table>
           </View>
-          <View className="panelWrapper__col row">
-            <span onClick={this.handlePreviousPages}><IoIosArrowDropleft size="20px" /></span>
-            <span onClick={this.handleShowTl}>Terjemahan</span>
-            <span onClick={this.handleNextPages}><IoIosArrowDropright size="20px" /></span>
+          <View className="panelWrapper__col row" style={{display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0, 1fr))' , alignItems: 'center', fontFamily: '"Open Sans", sans-serif', fontWeight: 700 }}>
+            <span style={{fontSize: 12, cursor: 'pointer'}} onClick={this.handlePreviousPages}>Sebelumnya</span>
+            <span style={{fontSize: 12, cursor: 'pointer'}}  onClick={this.handleShowTl}>Terjemahan</span>
+            <span style={{fontSize: 12, cursor: 'pointer'}}  onClick={this.handleNextPages}>Selanjutnya</span>
           </View>
         </View>
       </View>
@@ -168,25 +174,36 @@ class Surah extends Component {
     })
     const bissmillah =  checkAyah[0] ? checkAyah[0].text.replace("بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ", "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ") : null;
     
+
     return(
-      <BaseLayout showHeader={true} title={`${surah.englishName ? pageTitle : 'Loading'}`} className="quran-section" linkTo="/">
+      <BaseLayout showHeader={true} title={surah} className="quran-section" linkTo="/">
         <Section className="list-section" style={{position: 'relative'}}>
           <View className="content-ayah">
           <View className="p-contentAyah__items row">
               {surah.englishName !== "Al-Faatiha" ? <View className="bismillah">{bissmillah}</View> : null}
             </View>
             <View className="row">
-              {!_.isEmpty(ayat) && _.isArray(ayat)
-               ? ayat.map((data, i) => {
-                 let parsingData = data.text.split("بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ");
-                 return (
-                     <ListAyah data={data} key={i} surah={surah} parsingData={parsingData} showTranslate={showTranslate} />
-                )
-               }) : 
-              (
-                <Section style={{padding: '40px 0', margin: 'auto'}}>
-                  <LoadingBar />
-                </Section>
+            {!_.isEmpty(ayat) && _.isArray(ayat) ? (
+                  ayat.map((data, i) => {
+                      if (surah.englishName !== "Al-Faatiha" && i === 0) { // Check if it's the first ayah
+                          // Remove the selected string from the first ayah
+                          const modifiedData = data.text.replace("بِسۡمِ ٱللَّهِ ٱلرَّحۡمَـٰنِ ٱلرَّحِیمِ", "");
+
+                          // Return the ListAyah component with modifiedData
+                          return (
+                              <ListAyah data={{ ...data, text: modifiedData }} key={i} surah={surah} showTranslate={showTranslate} />
+                          );
+                      } else {
+                          // Return the ListAyah component as it is
+                          return (
+                              <ListAyah data={data} key={i} surah={surah} showTranslate={showTranslate} />
+                          );
+                      }
+                  })
+              ) : (
+                  <Section style={{ padding: '40px 0', margin: 'auto' }}>
+                      <LoadingBar />
+                  </Section>
               )}
             </View>
             <View className="open-panel bounce" onClick={this.handleShowPanel}><IoIosAnalytics size="30px" /></View>
