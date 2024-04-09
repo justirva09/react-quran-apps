@@ -24,10 +24,10 @@ class BaseLayout extends Component {
                     <h1 style={{color: '#009688'}}>Qur'an Indonesia</h1>
                 ) : (
                     <Link to={this.props.linkTo} style={{ textDecoration: 'none', color: '#009688' }}>
-                        <div style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 30px' }}>
-                            <h1 style={{ fontSize: 18 }}>{this.props.title.name}</h1>
+                        <div style={{ display: 'flex', justifyContent: 'center', padding: '8px 30px' }}>
+                            {/* <h1 style={{ fontSize: 18 }}>{this.props.title.name}</h1> */}
                             <h1 style={{ fontSize: 18 }}>{this.props.title.name} - (<span>{this.props.title.englishName}</span>)</h1>
-                            <h1 style={{ fontSize: 18 }}>(<span>{this.props.title.number}</span>)</h1>
+                            {/* <h1 style={{ fontSize: 18 }}>(<span>{this.props.title.number}</span>)</h1> */}
                         </div>
                     </Link>
                 )}
